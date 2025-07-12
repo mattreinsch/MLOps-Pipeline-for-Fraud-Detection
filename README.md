@@ -91,17 +91,21 @@ firebase emulators:start --only functions,firestore,hosting
 Update .env or use the included .env.example.
 
 Repo Structure
-bash
-Copy
-Edit
+```
 .
-├── src/                  # App source code
-├── components/           # React/MUI UI components
-├── .env.example          # Config template
-├── firebase.json         # Emulator & deploy config
-├── next.config.ts        # Next.js config
-├── docs/                 # Architecture, diagrams
-├── .github/workflows/    # GitHub CI/CD workflows
+├── src/                  # Application source code
+│   ├── pages/            # Next.js pages
+│   ├── components/       # Reusable UI components
+│   └── lib/              # Shared utilities
+├── docs/                 # Architecture diagrams and documentation
+├── .github/              # GitHub Actions workflows
+├── public/               # Static assets
+├── scripts/              # Dev/cleanup scripts (optional)
+├── .env.example          # Sample environment variables
+├── README.md             # Project overview and setup
+├── package.json          # Dependencies and scripts
+└── next.config.ts        # App config
+```
 Live Demo (Optional)
 Firebase Hosting URL or Replit Link Here
 

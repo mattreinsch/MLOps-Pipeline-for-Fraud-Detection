@@ -47,4 +47,5 @@ next-env.d.ts
 apphosting.yaml
 .idx
 .vscode
+.modified
 

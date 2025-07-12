@@ -1,31 +1,40 @@
-# MLOps Pipeline for Real-Time Fraud Detection
+# 🚨 MLOps Pipeline for Real-Time Fraud Detection
 
-> A full-stack, enterprise-grade MLOps system powered by Firebase, Next.js, and Gemini CLI — designed to detect and adapt to fraudulent activity at scale.
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![CI/CD](https://github.com/mattreinsch/mlops-fraud-pipeline/actions/workflows/deploy.yml/badge.svg)](https://github.com/mattreinsch/mlops-fraud-pipeline/actions)
+[![Made by Matt Reinsch](https://img.shields.io/badge/Made%20by-Matt%20Reinsch-blueviolet)](https://www.linkedin.com/in/mattreinsch/)
 
----
-
-## Overview
-
-This project demonstrates a production-ready MLOps pipeline for real-time fraud detection, combining cloud-native infrastructure, automated retraining, and CI/CD deployment. Built on Google Firebase and Gemini CLI, the system processes live transactions, flags anomalies, and adapts through statistical drift detection and triggered model updates.
-
-Whether used for prototyping or scaling into high-traffic production systems, this architecture showcases how to deliver trusted, explainable AI with minimal operational overhead.
+> A full-stack, enterprise-grade MLOps system powered by **Firebase**, **Next.js**, and **Gemini CLI** — built to detect and adapt to fraudulent activity at scale.
 
 ---
 
-## Tech Stack
+## 🧠 Overview
 
-| Layer           | Tech Used                      |
-|----------------|--------------------------------|
-| Frontend        | Next.js, TypeScript, MUI       |
-| Backend         | Firebase Functions, Firestore  |
-| CI/CD           | GitHub Actions + Firebase CLI  |
-| ML & MLOps      | Gemini CLI, custom pipelines   |
-| Auth & Access   | Firebase Auth + Firestore Rules|
-| Deployment      | Firebase Hosting + Emulators   |
+This repository showcases a **production-ready MLOps pipeline** for **real-time fraud detection**, combining:
+
+- ✅ Cloud-native infrastructure (Firebase)
+- ✅ CI/CD automation (GitHub Actions)
+- ✅ Model lifecycle orchestration (Gemini CLI)
+- ✅ Statistical drift detection with auto-retraining
+
+The system is optimized for high-throughput, low-latency environments — enabling **secure, scalable, and explainable ML deployments**.
 
 ---
 
-## ️ System Architecture
+## 🧰 Tech Stack
+
+| Layer           | Technologies Used                |
+|----------------|-----------------------------------|
+| Frontend        | Next.js, TypeScript, MUI          |
+| Backend         | Firebase Functions, Firestore     |
+| CI/CD           | GitHub Actions, Firebase CLI      |
+| ML & MLOps      | Gemini CLI, Custom Pipelines      |
+| Auth & Access   | Firebase Auth, Firestore Rules    |
+| Deployment      | Firebase Hosting + Emulators      |
+
+---
+
+## 🏗️ Architecture
 
 ```text
 +-------------------+
@@ -48,79 +57,104 @@ Whether used for prototyping or scaling into high-traffic production systems, th
 +-------------------+
 ```
 
-Key MLOps Capabilities
-✅ Real-time fraud inference on user events
+---
 
-✅ Automated retraining triggered by data drift
+## ✅ Core MLOps Features
 
-✅ Shadow deployment + model version rollback
+- 🔍 Real-time fraud inference on user events
+- 🔁 Automated retraining triggered by drift
+- 🕵️‍♀️ Shadow deployment with rollback support
+- 🧾 Full audit logging and access controls
+- 🚀 CI/CD with GitHub Actions + Firebase deploy
+- ⚙️ Local emulator support for rapid development
 
-✅ Full audit logging and access control
+---
 
-✅ GitHub Actions CI/CD with Firebase deploy
+## 📊 Business Impact
 
-✅ Rapid environment setup via emulators
+| Metric                      | Result                            |
+|----------------------------|------------------------------------|
+| 🛡️ Fraud Loss Reduction      | ↓ 67% fraudulent transactions       |
+| ⚠️ False Positive Rate       | ↓ 45% unnecessary flags             |
+| 🚀 Deployment Velocity       | 2 weeks → **3 days**                |
+| 🤖 Automation Coverage       | ↑ 85% less manual intervention      |
+| ⏱️ Uptime (SLA)              | **99.2%** availability              |
 
-Business Impact Highlights
-MetricResult
-Fraud loss reduction↓ 67% fraudulent activity
-False positive rate↓ 45% unnecessary flags
-Model deployment velocity⏱️ Cut from 2 weeks to 3 days
-Automation coverage↑ 85% reduced manual intervention
-Production uptime99.2% SLA
+---
 
-Local Setup
-1. Prerequisites
-Node.js ≥ 18
+## 🛠️ Local Development Setup
 
-Firebase CLI: npm install -g firebase-tools
+### 1. Prerequisites
 
-Gemini CLI: setup instructions here
+- Node.js ≥ 18
+- Firebase CLI  
+  ```bash
+  npm install -g firebase-tools
+  ```
+- Gemini CLI (see [setup guide](https://github.com/google/gemini-cli))
 
-2. Clone the Repo
-bash
-Copy
-Edit
-git clone https://github.com/mattreinsch/mlops-fraud-pipeline
+### 2. Clone the Repository
+
+```bash
+git clone https://github.com/mattreinsch/mlops-fraud-pipeline.git
 cd mlops-fraud-pipeline
-3. Start Local Environment
-bash
-Copy
-Edit
-firebase emulators:start --only functions,firestore,hosting
-Update .env or use the included .env.example.
+```
 
-Repo Structure
+### 3. Start Local Environment
+
+```bash
+firebase emulators:start --only functions,firestore,hosting
+```
+
+> 🧪 Update your `.env` file or use `.env.example` as a template.
+
+---
+
+## 📁 Repo Structure
+
 ```
 .
 ├── src/                  # Application source code
-│   ├── pages/            # Next.js pages
-│   ├── components/       # Reusable UI components
-│   └── lib/              # Shared utilities
-├── docs/                 # Architecture diagrams and documentation
+│   ├── pages/            # Next.js routes
+│   ├── components/       # UI components
+│   └── lib/              # Utility functions
+├── docs/                 # Architecture diagrams
+├── public/               # Static files
+├── scripts/              # Local setup scripts
 ├── .github/              # GitHub Actions workflows
-├── public/               # Static assets
-├── scripts/              # Dev/cleanup scripts (optional)
 ├── .env.example          # Sample environment variables
-├── README.md             # Project overview and setup
-├── package.json          # Dependencies and scripts
-└── next.config.ts        # App config
+├── firebase.json         # Firebase config
+├── apphosting.yaml       # Firebase hosting
+├── package.json          # App dependencies
+└── next.config.ts        # Next.js configuration
 ```
-Live Demo (Optional)
-Firebase Hosting URL or Replit Link Here
 
-️ Security & Governance
-Firebase Auth + Firestore RBAC
+---
 
-Explainable model outputs
+## 🌐 Live Demo
 
- Drift & degradation alerting
+> 🔗 coming soon_
 
-Model version rollback support
+---
 
-License
-Apache 2.0
+## 🔐 Security & Governance
 
-Author
-Made by Matt Reinsch
-Lead Data Scientist | AI & MLOps Leader | Creator of Data Drift
+- 🔐 Firebase Auth + Firestore RBAC
+- 🔎 Explainable model outputs (planned)
+- 📉 Drift & degradation alerting
+- 🔁 Versioned model rollback
+
+---
+
+## 📄 License
+
+Apache 2.0 License  
+See [`LICENSE`](LICENSE) for more details.
+
+---
+
+## 👤 Author
+
+**Matt Reinsch**  
+Lead Data Scientist | MLOps Leader | Creator of *Data Drift*  
+🔗 [LinkedIn](https://www.linkedin.com/in/matt-reinsch-51118781/) • 🧠 [Data Drift Newsletter](https://mattreinsch.com/)

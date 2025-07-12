@@ -1,1 +1,0 @@
-del commit.bat clean_repo.bat finalize.bat finalize_fixed.bat delete_scripts.bat
